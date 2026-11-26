@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>TiMer — Every Second, Perfectly.</title>
+  <meta name="description" content="TiMer is a premium time-management application featuring a precision stopwatch, voice-controlled countdown, and multiple independent timers.">
+  <meta name="theme-color" content="#090B10">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/icons/icon-192.png" sizes="192x192" type="image/png">
+  <link rel="apple-touch-icon" href="assets/icons/icon-192.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+
+  <div class="app" id="app">
+
+    <!-- ===================== SIDEBAR (desktop) ===================== -->
+    <aside class="sidebar" aria-label="Primary navigation">
+      <a class="brand" href="#dashboard" data-nav="dashboard">
+        <img src="assets/icons/favicon.svg" alt="" width="34" height="34" class="brand-mark">
+        <span class="brand-text">
+          <span class="brand-name">TiMer</span>
+          <span class="brand-tag">Every Second, Perfectly.</span>
+        </span>
+      </a>
+
+      <nav class="side-nav">
+        <a href="#dashboard" class="nav-item" data-nav="dashboard">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/></svg>
+          <span>Dashboard</span>
+        </a>
+        <a href="#stopwatch" class="nav-item" data-nav="stopwatch">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="8"/><path d="M12 9.5V13l2.6 2.6"/><path d="M9.5 2.5h5"/></svg>
+          <span>Stopwatch</span>
+        </a>
+        <a href="#countdown" class="nav-item" data-nav="countdown">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2.5" width="6" height="4" rx="1.2"/><path d="M12 8v5l3 2"/><circle cx="12" cy="14" r="8"/></svg>
+          <span>Voice Countdown</span>
+        </a>
+        <a href="#timers" class="nav-item" data-nav="timers">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="13" r="6.5"/><path d="M9 10v3l2 1.4"/><circle cx="16.5" cy="16.5" r="5"/><path d="M16.5 14.2v2l1.3.9"/></svg>
+          <span>Multiple Timers</span>
+        </a>
+        <a href="#presets" class="nav-item" data-nav="presets">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3.5h12a1 1 0 0 1 1 1V21l-7-4.5L5 21V4.5a1 1 0 0 1 1-1z"/></svg>
+          <span>Presets</span>
+        </a>
+        <a href="#history" class="nav-item" data-nav="history">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 12a8.5 8.5 0 1 0 2.5-6"/><path d="M3.5 4.5v4h4"/><path d="M12 7.5V12l3 2"/></svg>
+          <span>History</span>
+        </a>
+        <a href="#settings" class="nav-item" data-nav="settings">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3.2"/><path d="M19 12a7 7 0 0 0-.14-1.4l2-1.55-2-3.46-2.35.95a7 7 0 0 0-2.42-1.4L13.7 2.6h-3.4l-.39 2.54a7 7 0 0 0-2.42 1.4l-2.35-.95-2 3.46 2 1.55a7 7 0 0 0 0 2.8l-2 1.55 2 3.46 2.35-.95a7 7 0 0 0 2.42 1.4l.39 2.54h3.4l.39-2.54a7 7 0 0 0 2.42-1.4l2.35.95 2-3.46-2-1.55A7 7 0 0 0 19 12z"/></svg>
+          <span>Settings</span>
+        </a>
+        <a href="#about" class="nav-item" data-nav="about">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 11v5"/><path d="M12 8h.01"/></svg>
+          <span>About</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-foot">
+        <p class="side-version">TiMer <span id="versionLabel">v1.0.0</span></p>
+        <p class="side-credit">HIQU · TAWSIFUR RAHMAN</p>
+      </div>
+    </aside>
+
+    <!-- ===================== MAIN COLUMN ===================== -->
+    <div class="main-col">
+
+      <header class="topbar">
+        <a class="topbar-brand" href="#dashboard" data-nav="dashboard">
+          <img src="assets/icons/favicon.svg" alt="" width="28" height="28">
+          <span>TiMer</span>
+        </a>
+        <div class="topbar-clock" aria-label="Current time">
+          <span class="topbar-date" id="topbarDate"></span>
+          <span class="topbar-time" id="topbarTime"></span>
+        </div>
+        <div class="topbar-actions">
+          <span class="global-status" id="globalStatus" hidden>
+            <span class="status-dot" id="globalStatusDot"></span>
+            <span id="globalStatusText"></span>
+          </span>
+          <button class="icon-btn" id="themeToggle" type="button" aria-label="Toggle color theme">
+            <svg class="ic-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M4.3 4.3l1.6 1.6M18.1 18.1l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.3 19.7l1.6-1.6M18.1 5.9l1.6-1.6"/></svg>
+            <svg class="ic-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.5 14.5A8.5 8.5 0 1 1 9.5 3.5a7 7 0 0 0 11 11z"/></svg>
+          </button>
+        </div>
+      </header>
+
+      <main id="main" class="main">
+
+        <!-- ================= DASHBOARD ================= -->
+        <section class="view" id="view-dashboard" data-view="dashboard" aria-labelledby="dashTitle">
+          <div class="view-head">
+            <div>
+              <h1 id="dashTitle" class="view-title">Good evening</h1>
+              <p class="view-sub" id="dashDate"></p>
+            </div>
+          </div>
+
+          <div class="dash-grid">
+            <div class="panel dash-stop">
+              <div class="panel-head">
+                <h2>Quick Stopwatch</h2>
+                <a href="#stopwatch" class="link-arrow" data-nav="stopwatch">Open full view</a>
+              </div>
+              <p class="big-time" id="dashSwDisplay">00:00.00</p>
+              <div class="btn-row">
+                <button class="btn btn-primary" id="dashSwStart" type="button">Start</button>
+                <button class="btn btn-ghost" id="dashSwLap" type="button" disabled>Lap</button>
+                <button class="btn btn-ghost" id="dashSwReset" type="button" disabled>Reset</button>
+              </div>
+            </div>
+
+            <div class="panel dash-count">
+              <div class="panel-head">
+                <h2>Quick Countdown</h2>
+                <a href="#countdown" class="link-arrow" data-nav="countdown">Open full view</a>
+              </div>
+              <div class="chip-row" id="dashQuickChips"></div>
+            </div>
+
+            <div class="panel dash-active">
+              <div class="panel-head">
+                <h2>Active Timers</h2>
+                <a href="#timers" class="link-arrow" data-nav="timers">Manage</a>
+              </div>
+              <ul class="mini-list" id="dashActiveTimers"></ul>
+              <p class="empty-note" id="dashActiveEmpty">No timers running. Create one from Multiple Timers or Presets.</p>
+            </div>
+
+            <div class="panel dash-presets">
+              <div class="panel-head">
+                <h2>Recent Presets</h2>
+                <a href="#presets" class="link-arrow" data-nav="presets">All presets</a>
+              </div>
+              <ul class="mini-list" id="dashRecentPresets"></ul>
+              <p class="empty-note" id="dashPresetsEmpty">No presets used yet. Your recently launched presets appear here.</p>
+            </div>
+
+            <div class="panel dash-activity panel-wide">
+              <div class="panel-head">
+                <h2>Recent Activity</h2>
+                <a href="#history" class="link-arrow" data-nav="history">Full history</a>
+              </div>
+              <ul class="mini-list" id="dashActivity"></ul>
+              <p class="empty-note" id="dashActivityEmpty">Nothing yet — completed timers and stopwatch sessions will show here.</p>
+            </div>
+
+            <div class="dash-cards">
+              <a href="#stopwatch" class="quick-card" data-nav="stopwatch">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="8"/><path d="M12 9.5V13l2.6 2.6"/><path d="M9.5 2.5h5"/></svg>
+                <span>Precision Stopwatch</span>
+              </a>
+              <a href="#countdown" class="quick-card" data-nav="countdown">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a7 7 0 0 1 7 7c0 2.4-1.2 4.2-2.6 5.4-.9.8-1.4 1.6-1.4 2.6H9c0-1-.5-1.8-1.4-2.6C6.2 13.2 5 11.4 5 9a7 7 0 0 1 7-7z"/><path d="M9.5 20.5h5"/></svg>
+                <span>Voice Countdown</span>
+              </a>
+              <a href="#timers" class="quick-card" data-nav="timers">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="13" r="6.5"/><path d="M9 10v3l2 1.4"/><circle cx="16.5" cy="16.5" r="5"/><path d="M16.5 14.2v2l1.3.9"/></svg>
+                <span>Multiple Timers</span>
+              </a>
+              <a href="#presets" class="quick-card" data-nav="presets">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3.5h12a1 1 0 0 1 1 1V21l-7-4.5L5 21V4.5a1 1 0 0 1 1-1z"/></svg>
+                <span>Preset Library</span>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================= STOPWATCH ================= -->
+        <section class="view" id="view-stopwatch" data-view="stopwatch" aria-labelledby="swTitle">
+          <div class="view-head">
+            <div>
+              <h1 class="view-title" id="swTitle">Stopwatch</h1>
+              <p class="view-sub">High-precision timing with laps and session statistics.</p>
+            </div>
+          </div>
+
+          <div class="panel sw-panel">
+            <div class="sw-face">
+              <p class="sw-display" id="swDisplay" role="timer" aria-live="off">
+                <span id="swHrs" class="sw-seg">00</span><span class="sw-colon">:</span><span id="swMin" class="sw-seg">00</span><span class="sw-colon">:</span><span id="swSec" class="sw-seg">00</span><span class="sw-ms" id="swMs">.00</span>
+              </p>
+              <p class="sw-state" id="swState">Ready</p>
+            </div>
+
+            <div class="controls-row">
+              <button class="btn btn-primary btn-lg" id="swStartBtn" type="button">Start</button>
+              <button class="btn btn-soft btn-lg" id="swLapBtn" type="button" disabled>Lap</button>
+              <button class="btn btn-ghost btn-lg" id="swResetBtn" type="button" disabled>Reset</button>
+            </div>
+
+            <div class="stats-grid" id="swStats" hidden>
+              <div class="stat"><span class="stat-label">Fastest</span><span class="stat-value" id="swFastest">—</span></div>
+              <div class="stat"><span class="stat-label">Slowest</span><span class="stat-value" id="swSlowest">—</span></div>
+              <div class="stat"><span class="stat-label">Average</span><span class="stat-value" id="swAverage">—</span></div>
+              <div class="stat"><span class="stat-label">Laps</span><span class="stat-value" id="swLapCount">0</span></div>
+            </div>
+
+            <div class="laps-wrap" id="lapsWrap" hidden>
+              <div class="laps-head">
+                <h2>Laps</h2>
+                <button class="btn btn-ghost btn-sm" id="swClearLaps" type="button">Clear laps</button>
+              </div>
+              <ul class="lap-list" id="lapList"></ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================= VOICE COUNTDOWN ================= -->
+        <section class="view" id="view-countdown" data-view="countdown" aria-labelledby="cdTitle">
+          <div class="view-head">
+            <div>
+              <h1 class="view-title" id="cdTitle">Voice Countdown</h1>
+              <p class="view-sub">Set, control, and monitor a countdown — by voice or by hand.</p>
+            </div>
+          </div>
+
+          <div class="cd-layout">
+            <div class="panel cd-panel">
+              <div class="ring-wrap">
+                <svg class="cd-ring" viewBox="0 0 260 260" aria-hidden="true">
+                  <defs>
+                    <linearGradient id="ringGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stop-color="#8CA8FF"/>
+                      <stop offset="100%" stop-color="#A995FF"/>
+                    </linearGradient>
+                  </defs>
+                  <circle class="ring-track" cx="130" cy="130" r="118"/>
+                  <circle class="ring-fill" id="cdRing" cx="130" cy="130" r="118"/>
+                </svg>
+                <div class="ring-center">
+                  <p class="cd-display" id="cdDisplay" role="timer">00:00</p>
+                  <p class="cd-label" id="cdStateLabel">Set a duration to begin</p>
+                </div>
+              </div>
+
+              <div class="cd-inputs" id="cdInputs">
+                <div class="time-field">
+                  <label for="cdHours">Hours</label>
+                  <input type="number" id="cdHours" min="0" max="99" value="0" inputmode="numeric">
+                </div>
+                <span class="time-sep">:</span>
+                <div class="time-field">
+                  <label for="cdMinutes">Minutes</label>
+                  <input type="number" id="cdMinutes" min="0" max="59" value="5" inputmode="numeric">
+                </div>
+                <span class="time-sep">:</span>
+                <div class="time-field">
+                  <label for="cdSeconds">Seconds</label>
+                  <input type="number" id="cdSeconds" min="0" max="59" value="0" inputmode="numeric">
+                </div>
+              </div>
+
+              <div class="chip-row" id="cdQuickChips"></div>
+
+              <div class="controls-row">
+                <button class="btn btn-primary btn-lg" id="cdStartBtn" type="button">Start</button>
+                <button class="btn btn-soft btn-lg" id="cdPauseBtn" type="button" hidden>Pause</button>
+                <button class="btn btn-ghost btn-lg" id="cdResetBtn" type="button" hidden>Reset</button>
+              </div>
+            </div>
+
+            <div class="panel voice-panel">
+              <div class="panel-head">
+                <h2>Voice Control</h2>
+                <span class="voice-badge" id="voiceSupportBadge">Checking support…</span>
+              </div>
+
+              <div class="voice-core">
+                <button class="mic-btn" id="micBtn" type="button" aria-label="Start voice control" aria-pressed="false">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2.5" width="6" height="11" rx="3"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0"/><path d="M12 17.5V21"/></svg>
+                </button>
+                <p class="mic-hint" id="micHint">Tap the microphone and say a command</p>
+                <div class="voice-waves" id="voiceWaves" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
+              </div>
+
+              <div class="voice-log-wrap">
+                <h3>Recognized commands</h3>
+                <ul class="voice-log" id="voiceLog"></ul>
+                <p class="empty-note" id="voiceLogEmpty">Voice activity will appear here.</p>
+              </div>
+
+              <div class="command-list">
+                <h3>Try saying</h3>
+                <ul>
+                  <li>“Set a timer for five minutes.”</li>
+                  <li>“Start a ten-minute countdown.”</li>
+                  <li>“Pause the timer.”</li>
+                  <li>“Resume the timer.”</li>
+                  <li>“Reset the timer.”</li>
+                  <li>“How much time is left?”</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================= MULTIPLE TIMERS ================= -->
+        <section class="view" id="view-timers" data-view="timers" aria-labelledby="mtTitle">
+          <div class="view-head">
+            <div>
+              <h1 class="view-title" id="mtTitle">Multiple Timers</h1>
+              <p class="view-sub">Independent countdowns running side by side.</p>
+            </div>
+            <button class="btn btn-primary" id="mtNewBtn" type="button">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+              New Timer
+            </button>
+          </div>
+
+          <form class="panel mt-form" id="mtForm" hidden>
+            <h2 id="mtFormTitle">New timer</h2>
+            <div class="mt-form-row">
+              <div class="field">
+                <label for="mtName">Name</label>
+                <input type="text" id="mtName" maxlength="40" placeholder="e.g. Pasta, Laundry, Focus block" autocomplete="off">
+              </div>
+              <div class="field time-field">
+                <label for="mtHours">Hours</label>
+                <input type="number" id="mtHours" min="0" max="99" value="0" inputmode="numeric">
+              </div>
+              <div class="field time-field">
+                <label for="mtMinutes">Minutes</label>
+                <input type="number" id="mtMinutes" min="0" max="59" value="5" inputmode="numeric">
+              </div>
+              <div class="field time-field">
+                <label for="mtSeconds">Seconds</label>
+                <input type="number" id="mtSeconds" min="0" max="59" value="0" inputmode="numeric">
+              </div>
+            </div>
+            <div class="btn-row">
+              <button class="btn btn-primary" id="mtSaveBtn" type="submit">Add timer</button>
+              <button class="btn btn-ghost" id="mtCancelBtn" type="button">Cancel</button>
+            </div>
+          </form>
+
+          <div class="timer-grid" id="timerGrid"></div>
+          <div class="empty-state" id="mtEmpty">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="13" r="6.5"/><path d="M9 10v3l2 1.4"/><circle cx="16.5" cy="16.5" r="5"/><path d="M16.5 14.2v2l1.3.9"/></svg>
+            <h2>No timers yet</h2>
+            <p>Create your first timer and it will appear here — each one runs completely independently.</p>
+            <button class="btn btn-primary" id="mtEmptyNew" type="button">Create a timer</button>
+          </div>
+        </section>
+
+        <!-- ================= PRESETS ================= -->
+        <section class="view" id="view-presets" data-view="presets" aria-labelledby="prTitle">
+          <div class="view-head">
+            <div>
+              <h1 class="view-title" id="prTitle">Presets</h1>
+              <p class="view-sub">One-tap timers for the routines you repeat.</p>
+            </div>
+            <button class="btn btn-primary" id="prNewBtn" type="button">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+              New Preset
+            </button>
+          </div>
+
+          <form class="panel mt-form" id="prForm" hidden>
+            <h2 id="prFormTitle">New preset</h2>
+            <div class="mt-form-row">
+              <div class="field">
+                <label for="prName">Name</label>
+                <input type="text" id="prName" maxlength="40" placeholder="e.g. Tea steeping" autocomplete="off">
+              </div>
+              <div class="field time-field">
+                <label for="prHours">Hours</label>
+                <input type="number" id="prHours" min="0" max="99" value="0" inputmode="numeric">
+              </div>
+              <div class="field time-field">
+                <label for="prMinutes">Minutes</label>
+                <input type="number" id="prMinutes" min="0" max="59" value="5" inputmode="numeric">
+              </div>
+              <div class="field time-field">
+                <label for="prSeconds">Seconds</label>
+                <input type="number" id="prSeconds" min="0" max="59" value="0" inputmode="numeric">
+              </div>
+            </div>
+            <div class="btn-row">
+              <button class="btn btn-primary" id="prSaveBtn" type="submit">Save preset</button>
+              <button class="btn btn-ghost" id="prCancelBtn" type="button">Cancel</button>
+            </div>
+          </form>
+
+          <div class="preset-groups" id="presetGroups"></div>
+        </section>
+
+        <!-- ================= HISTORY ================= -->
+        <section class="view" id="view-history" data-view="history" aria-labelledby="hiTitle">
+          <div class="view-head">
+            <div>
+              <h1 class="view-title" id="hiTitle">History</h1>
+              <p class="view-sub">Completed timers and finished stopwatch sessions.</p>
+            </div>
+            <button class="btn btn-ghost" id="hiClearBtn" type="button" disabled>Clear history</button>
+          </div>
+
+          <ul class="history-list" id="historyList"></ul>
+          <div class="empty-state" id="hiEmpty">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 12a8.5 8.5 0 1 0 2.5-6"/><path d="M3.5 4.5v4h4"/><path d="M12 7.5V12l3 2"/></svg>
+            <h2>No history yet</h2>
+            <p>Finished timers and stopwatch sessions will be recorded here.</p>
+          </div>
+        </section>
+
+        <!-- ================= SETTINGS ================= -->
+        <section class="view" id="view-settings" data-view="settings" aria-labelledby="seTitle">
+          <div class="view-head">
+            <div>
+              <h1 class="view-title" id="seTitle">Settings</h1>
+              <p class="view-sub">Tune TiMer to the way you work. Preferences are saved on this device.</p>
+            </div>
+          </div>
+
+          <div class="settings-stack">
+            <div class="panel settings-group">
+              <h2>Appearance</h2>
+              <div class="setting-row">
+                <div>
+                  <h3>Theme</h3>
+                  <p>Dark, light, or follow your system.</p>
+                </div>
+                <div class="segmented" role="radiogroup" aria-label="Theme">
+                  <button type="button" class="seg-btn" data-theme-opt="dark">Dark</button>
+                  <button type="button" class="seg-btn" data-theme-opt="light">Light</button>
+                  <button type="button" class="seg-btn" data-theme-opt="system">System</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="panel settings-group">
+              <h2>Alerts</h2>
+              <div class="setting-row">
+                <div>
+                  <h3>Completion sound</h3>
+                  <p>Play a chime when a timer finishes.</p>
+                </div>
+                <button class="switch" id="setSound" type="button" role="switch" aria-checked="true" aria-label="Completion sound"><span></span></button>
+              </div>
+              <div class="setting-row">
+                <div>
+                  <h3>Voice announcements</h3>
+                  <p>Speak status updates such as “Your timer has started.”</p>
+                </div>
+                <button class="switch" id="setSpeech" type="button" role="switch" aria-checked="true" aria-label="Voice announcements"><span></span></button>
+              </div>
+              <div class="setting-row">
+                <div>
+                  <h3>One-minute warning</h3>
+                  <p>Warn with a sound and spoken notice one minute before the end.</p>
+                </div>
+                <button class="switch" id="setWarning" type="button" role="switch" aria-checked="true" aria-label="One-minute warning"><span></span></button>
+              </div>
+              <div class="setting-row">
+                <div>
+                  <h3>Notifications</h3>
+                  <p id="notifStatusText">Browser notifications are off.</p>
+                </div>
+                <button class="btn btn-soft btn-sm" id="notifToggleBtn" type="button">Enable notifications</button>
+              </div>
+            </div>
+
+            <div class="panel settings-group">
+              <h2>Timers</h2>
+              <div class="setting-row">
+                <div>
+                  <h3>Auto-start on launch</h3>
+                  <p>Start a countdown immediately when launched from a preset.</p>
+                </div>
+                <button class="switch" id="setAutoStart" type="button" role="switch" aria-checked="true" aria-label="Auto-start on launch"><span></span></button>
+              </div>
+            </div>
+
+            <div class="panel settings-group">
+              <h2>Data</h2>
+              <p class="settings-note">History, presets, and preferences are stored locally in this browser — they do not sync between devices.</p>
+              <div class="btn-row">
+                <button class="btn btn-soft" id="setClearHistory" type="button">Clear history</button>
+                <button class="btn btn-danger" id="setResetAll" type="button">Reset all settings</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================= ABOUT ================= -->
+        <section class="view" id="view-about" data-view="about" aria-labelledby="abTitle">
+          <div class="about-hero panel">
+            <img src="assets/icons/favicon.svg" alt="" width="72" height="72" class="about-mark">
+            <h1 id="abTitle">TiMer</h1>
+            <p class="about-tagline">Every Second, Perfectly.</p>
+            <p class="about-lede">A modern time-management application designed to make everyday time tracking simple, precise, and efficient.</p>
+          </div>
+
+          <div class="about-cols">
+            <div class="panel">
+              <h2>Core features</h2>
+              <ul class="about-list">
+                <li><strong>Precision stopwatch</strong> — accurate to the millisecond, with lap recording and session statistics.</li>
+                <li><strong>Voice-controlled countdown</strong> — hands-free timer control with spoken feedback where supported.</li>
+                <li><strong>Multiple independent timers</strong> — run as many countdowns as you need, side by side.</li>
+                <li><strong>Preset library</strong> — one-tap timers for work, study, breaks, cooking, and everyday routines.</li>
+                <li><strong>History & insights</strong> — a local record of completed timers and stopwatch sessions.</li>
+                <li><strong>Offline-ready PWA</strong> — installable and fully usable without a connection.</li>
+              </ul>
+            </div>
+
+            <div class="panel about-credits">
+              <h2>Credits</h2>
+              <dl>
+                <div><dt>Publisher</dt><dd>HIQU</dd></div>
+                <div><dt>Developer</dt><dd>TAWSIFUR RAHMAN</dd></div>
+                <div><dt>Version</dt><dd id="aboutVersion">1.0.0</dd></div>
+              </dl>
+            </div>
+          </div>
+
+          <footer class="about-footer">
+            <p>© <span id="copyYear"></span> HIQU. TiMer — Every Second, Perfectly.</p>
+          </footer>
+        </section>
+
+      </main>
+    </div>
+  </div>
+
+  <!-- Bottom navigation (mobile) -->
+  <nav class="bottom-nav" aria-label="Primary navigation">
+    <a href="#dashboard" class="bn-item" data-nav="dashboard">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/></svg>
+      <span>Home</span>
+    </a>
+    <a href="#stopwatch" class="bn-item" data-nav="stopwatch">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="8"/><path d="M12 9.5V13l2.6 2.6"/><path d="M9.5 2.5h5"/></svg>
+      <span>Stopwatch</span>
+    </a>
+    <a href="#countdown" class="bn-item" data-nav="countdown">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a7 7 0 0 1 7 7c0 2.4-1.2 4.2-2.6 5.4-.9.8-1.4 1.6-1.4 2.6H9c0-1-.5-1.8-1.4-2.6C6.2 13.2 5 11.4 5 9a7 7 0 0 1 7-7z"/><path d="M9.5 20.5h5"/></svg>
+      <span>Voice</span>
+    </a>
+    <a href="#timers" class="bn-item" data-nav="timers">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="13" r="6.5"/><path d="M9 10v3l2 1.4"/><circle cx="16.5" cy="16.5" r="5"/><path d="M16.5 14.2v2l1.3.9"/></svg>
+      <span>Timers</span>
+    </a>
+    <a href="#presets" class="bn-item" data-nav="presets">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3.5h12a1 1 0 0 1 1 1V21l-7-4.5L5 21V4.5a1 1 0 0 1 1-1z"/></svg>
+      <span>Presets</span>
+    </a>
+  </nav>
+
+  <!-- Toast + confirm + live region -->
+  <div class="toast-stack" id="toastStack" aria-live="polite"></div>
+
+  <div class="modal-backdrop" id="modalBackdrop" hidden>
+    <div class="modal" role="alertdialog" aria-modal="true" aria-labelledby="modalTitle" aria-describedby="modalBody">
+      <h2 id="modalTitle">Are you sure?</h2>
+      <p id="modalBody">This action cannot be undone.</p>
+      <div class="btn-row modal-actions">
+        <button class="btn btn-danger" id="modalConfirm" type="button">Confirm</button>
+        <button class="btn btn-ghost" id="modalCancel" type="button">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="sr-only" aria-live="polite" id="srStatus"></div>
+
+  <noscript>
+    <div style="padding:2rem;font-family:sans-serif;text-align:center;">
+      TiMer requires JavaScript. Please enable JavaScript and reload.
+    </div>
+  </noscript>
+
+  <script src="js/storage.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/sounds.js"></script>
+  <script src="js/speech.js"></script>
+  <script src="js/notify.js"></script>
+  <script src="js/history.js"></script>
+  <script src="js/stopwatch.js"></script>
+  <script src="js/countdown.js"></script>
+  <script src="js/timers.js"></script>
+  <script src="js/presets.js"></script>
+  <script src="js/settings.js"></script>
+  <script src="js/dashboard.js"></script>
+  <script src="js/voice.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

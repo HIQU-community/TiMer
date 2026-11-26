@@ -1,0 +1,86 @@
+/* ============================================================
+   TiMer — Responsive layer
+   Mobile-first refinements on top of the desktop shell
+   ============================================================ */
+
+/* Large tablets / small desktops */
+@media (max-width: 1080px) {
+  .cd-layout { grid-template-columns: 1fr; }
+  .dash-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 920px) {
+  .app { grid-template-columns: 1fr; }
+
+  .sidebar { display: none; }
+
+  .topbar-brand { display: inline-flex; }
+  .topbar { padding: 0 18px; }
+  .main { padding: 22px 18px 110px; }
+
+  .bottom-nav { display: flex; }
+
+  .view-head { margin-bottom: 20px; }
+  .stats-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .about-cols { grid-template-columns: 1fr; }
+
+  .toast-stack {
+    bottom: calc(84px + env(safe-area-inset-bottom));
+    right: 14px;
+    left: 14px;
+    max-width: none;
+  }
+}
+
+/* Phones */
+@media (max-width: 600px) {
+  body { font-size: 15px; }
+
+  .topbar-date { display: none; }
+  .global-status { display: none; }
+
+  .dash-grid { grid-template-columns: 1fr; }
+  .dash-cards { grid-template-columns: 1fr 1fr; }
+  .quick-card { padding: 14px; font-size: 13px; }
+
+  .panel { padding: 18px; border-radius: var(--r-md); }
+
+  .big-time { font-size: 44px; }
+
+  .sw-display { font-size: clamp(46px, 14vw, 64px); }
+  .sw-ms { min-width: 2ch; }
+
+  .btn-lg { min-height: 50px; padding: 12px 22px; }
+  .controls-row .btn { flex: 1; }
+
+  .cd-inputs { width: 100%; justify-content: center; }
+  .time-field input { width: 76px; }
+
+  .mt-form-row { align-items: stretch; flex-direction: column; }
+  .mt-form-row .field:first-child { flex: 1 1 auto; }
+  .time-field input { width: 100%; }
+  .mt-form-row .time-field { flex: 1; }
+
+  .timer-grid { grid-template-columns: 1fr; }
+
+  .history-list li { flex-wrap: wrap; }
+  .history-when { width: 100%; }
+
+  .setting-row { flex-wrap: wrap; }
+  .setting-row > div:first-child { min-width: 220px; }
+
+  .card-time { font-size: 26px; }
+
+  .voice-core { padding: 16px; }
+
+  .modal-actions { flex-direction: column-reverse; }
+  .modal-actions .btn { width: 100%; }
+}
+
+/* Very small screens */
+@media (max-width: 380px) {
+  .dash-cards { grid-template-columns: 1fr; }
+  .cd-display { font-size: 40px; }
+  .segmented { width: 100%; }
+  .seg-btn { flex: 1; padding: 8px 6px; }
+}
