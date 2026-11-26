@@ -2,7 +2,7 @@
   "name": "TiMer — Every Second, Perfectly.",
   "short_name": "TiMer",
   "description": "A premium time-management application: precision stopwatch, voice-controlled countdown, and multiple independent timers.",
-  "id": "/",
+  "id": "./",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
