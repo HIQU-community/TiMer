@@ -48,7 +48,7 @@ clearing browser data removes it.
 ## Project structure
 
 ```
-TiMer/
+./
 ├── index.html
 ├── manifest.json
 ├── service-worker.js
@@ -96,7 +96,6 @@ Any static server works:
 
 ```bash
 # Python 3
-cd TiMer
 python3 -m http.server 8080
 
 # or Node.js
