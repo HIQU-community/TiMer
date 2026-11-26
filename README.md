@@ -100,7 +100,7 @@ cd TiMer
 python3 -m http.server 8080
 
 # or Node.js
-npx serve TiMer
+npx serve .
 ```
 
 Then open <http://localhost:8080>.
